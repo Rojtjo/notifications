@@ -32,7 +32,7 @@ $notifier->send(Notification::success('A successful notification'));
 
 You can use one of the integrations below to get started more quickly.
 
-* Laravel integration: https://github.com/rojtjo/notifications-laravel
+* Laravel integration: https://github.com/rojtjo/notifier-laravel
 
 ## Documentation
 
