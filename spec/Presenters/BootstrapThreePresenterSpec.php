@@ -36,13 +36,11 @@ HTML
 );
     }
 
-    function it_allows_the_class_name_suffix_map_to_be_configurable()
+    function it_allows_the_class_name_suffix_map_to_be_configurable_by_merging_with_the_default()
     {
         $this->beConstructedWith([
             'success' => 'something-else-success',
             'error' => 'something-else-danger',
-            'warning' => 'something-else-warning',
-            'info' => 'something-else-info',
         ]);
 
         $notifications = $this->createNotifications();
@@ -54,10 +52,10 @@ HTML
 <div class="alert alert-something-else-danger" role="alert">
     It is an error
 </div>
-<div class="alert alert-something-else-warning" role="alert">
+<div class="alert alert-warning" role="alert">
     It is a warning
 </div>
-<div class="alert alert-something-else-info" role="alert">
+<div class="alert alert-info" role="alert">
     It is info
 </div>
 
