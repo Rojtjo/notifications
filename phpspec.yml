@@ -1,0 +1,6 @@
+---
+suites:
+  notifier_suite:
+    namespace: Rojtjo\Notifications
+    psr4_prefix: Rojtjo\Notifications
+formatter.name: pretty
