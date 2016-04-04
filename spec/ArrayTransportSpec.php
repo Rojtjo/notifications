@@ -10,7 +10,7 @@ class ArrayTransportSpec extends ObjectBehavior
 {
     function it_is_a_transport()
     {
-        $this->shouldImplement('Rojtjo\Notifications\Transport');
+        $this->shouldImplement('Rojtjo\Notifier\Transport');
     }
 
     function it_stores_the_sent_notifications_in_an_array()
