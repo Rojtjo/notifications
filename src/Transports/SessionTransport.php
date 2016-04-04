@@ -14,11 +14,18 @@ class SessionTransport implements Transport
     private $session;
 
     /**
-     * @param SessionStore $session
+     * @var string
      */
-    public function __construct(SessionStore $session)
+    private $key;
+
+    /**
+     * @param SessionStore $session
+     * @param string $key
+     */
+    public function __construct(SessionStore $session, $key = 'notifications')
     {
         $this->session = $session;
+        $this->key = $key;
     }
 
     /**
@@ -27,6 +34,9 @@ class SessionTransport implements Transport
      */
     public function send(Notification $notification)
     {
-        $this->session->push($notification);
+        $this->session->push($this->key.'.new', [
+            'type' => $notification->getType(),
+            'message' => $notification->getMessage(),
+        ]);
     }
 }

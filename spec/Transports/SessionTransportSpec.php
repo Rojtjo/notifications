@@ -11,7 +11,7 @@ class SessionTransportSpec extends ObjectBehavior
 {
     function let(SessionStore $session)
     {
-        $this->beConstructedWith($session);
+        $this->beConstructedWith($session, 'my-key');
     }
 
     function it_is_a_transport()
@@ -19,10 +19,13 @@ class SessionTransportSpec extends ObjectBehavior
         $this->shouldImplement('Rojtjo\Notifier\Transport');
     }
 
-    function it_sends_the_notifications_to_the_session(SessionStore $session)
+    function it_sends_the_notifications_to_the_session_store(SessionStore $session)
     {
         $notification = Notification::success('It was successful');
-        $session->push($notification)->shouldBeCalled();
+        $session->push('my-key.new', [
+            'type' => $notification->getType(),
+            'message' => $notification->getMessage(),
+        ])->shouldBeCalled();
         $this->send($notification);
     }
 }

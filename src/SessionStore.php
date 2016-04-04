@@ -5,8 +5,9 @@ namespace Rojtjo\Notifier;
 interface SessionStore
 {
     /**
-     * @param Notification $notification
+     * @param string $key
+     * @param array $notification
      * @return void
      */
-    public function push(Notification $notification);
+    public function push($key, array $notification);
 }
