@@ -34,7 +34,7 @@ class SessionTransport implements Transport
      */
     public function send(Notification $notification)
     {
-        $this->session->push($this->key.'.new', [
+        $this->session->push($this->key . '.new', [
             'type' => $notification->getType(),
             'message' => $notification->getMessage(),
         ]);
