@@ -1,6 +1,9 @@
 <?php
 
-namespace Rojtjo\Notifier;
+namespace Rojtjo\Notifier\Transports;
+
+use Rojtjo\Notifier\Notification;
+use Rojtjo\Notifier\Transport;
 
 class ArrayTransport implements Transport
 {

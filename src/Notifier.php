@@ -19,6 +19,7 @@ class Notifier
 
     /**
      * @param Notification $notification
+     * @return void
      */
     public function send(Notification $notification)
     {

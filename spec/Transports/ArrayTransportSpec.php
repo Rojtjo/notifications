@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Rojtjo\Notifier;
+namespace spec\Rojtjo\Notifier\Transports;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
