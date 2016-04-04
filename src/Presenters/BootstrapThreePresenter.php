@@ -19,13 +19,21 @@ class BootstrapThreePresenter implements Presenter
     ];
 
     /**
+     * @param array $classNameSuffixMap
+     */
+    public function __construct(array $classNameSuffixMap = [])
+    {
+        $this->classNameSuffixMap = array_merge($this->classNameSuffixMap, $classNameSuffixMap);
+    }
+
+    /**
      * @param Notifications $notifications
      * @return string
      */
     public function render(Notifications $notifications)
     {
         $output = '';
-        foreach($notifications as $notification) {
+        foreach ($notifications as $notification) {
             $output .= $this->renderNotification($notification);
         }
 
@@ -53,7 +61,7 @@ HTML;
      */
     private function getClassNameSuffix($type)
     {
-        if(!isset($this->classNameSuffixMap[$type])) {
+        if (!isset($this->classNameSuffixMap[$type])) {
             return 'default';
         }
 

@@ -16,12 +16,7 @@ class BootstrapThreePresenterSpec extends ObjectBehavior
 
     function it_can_render_the_given_notifications()
     {
-        $notifications = new Notifications([
-            Notification::success('It is successful'),
-            Notification::error('It is an error'),
-            Notification::warning('It is a warning'),
-            Notification::info('It is info'),
-        ]);
+        $notifications = $this->createNotifications();
 
         $this->render($notifications)->shouldBe(<<<HTML
 <div class="alert alert-success" role="alert">
@@ -39,5 +34,47 @@ class BootstrapThreePresenterSpec extends ObjectBehavior
 
 HTML
 );
+    }
+
+    function it_allows_the_class_name_suffix_map_to_be_configurable()
+    {
+        $this->beConstructedWith([
+            'success' => 'something-else-success',
+            'error' => 'something-else-danger',
+            'warning' => 'something-else-warning',
+            'info' => 'something-else-info',
+        ]);
+
+        $notifications = $this->createNotifications();
+
+        $this->render($notifications)->shouldBe(<<<HTML
+<div class="alert alert-something-else-success" role="alert">
+    It is successful
+</div>
+<div class="alert alert-something-else-danger" role="alert">
+    It is an error
+</div>
+<div class="alert alert-something-else-warning" role="alert">
+    It is a warning
+</div>
+<div class="alert alert-something-else-info" role="alert">
+    It is info
+</div>
+
+HTML
+);
+    }
+
+    /**
+     * @return Notifications
+     */
+    private function createNotifications()
+    {
+        return new Notifications([
+            Notification::success('It is successful'),
+            Notification::error('It is an error'),
+            Notification::warning('It is a warning'),
+            Notification::info('It is info'),
+        ]);
     }
 }
