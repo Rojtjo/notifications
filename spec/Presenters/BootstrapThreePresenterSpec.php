@@ -63,6 +63,21 @@ HTML
 );
     }
 
+    function it_uses_default_when_the_type_is_not_configured_in_the_class_name_suffix_map()
+    {
+        $notifications = new Notifications([
+            new Notification('non-existing-type', 'With a message')
+        ]);
+
+        $this->render($notifications)->shouldBe(<<<HTML
+<div class="alert alert-default" role="alert">
+    With a message
+</div>
+
+HTML
+);
+    }
+
     /**
      * @return Notifications
      */
