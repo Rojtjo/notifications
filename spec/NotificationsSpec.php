@@ -24,5 +24,6 @@ class NotificationsSpec extends ObjectBehavior
     function it_is_countable()
     {
         $this->shouldImplement('Countable');
+        $this->count()->shouldBe(2);
     }
 }
