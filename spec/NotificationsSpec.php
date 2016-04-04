@@ -19,6 +19,7 @@ class NotificationsSpec extends ObjectBehavior
     function it_is_an_iterator()
     {
         $this->shouldImplement('IteratorAggregate');
+        $this->getIterator()->shouldHaveType('ArrayIterator');
     }
 
     function it_is_countable()
