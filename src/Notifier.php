@@ -1,6 +1,6 @@
 <?php
 
-namespace Rojtjo\Notifications;
+namespace Rojtjo\Notifier;
 
 class Notifier
 {

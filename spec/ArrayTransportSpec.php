@@ -1,10 +1,10 @@
 <?php
 
-namespace spec\Rojtjo\Notifications;
+namespace spec\Rojtjo\Notifier;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Rojtjo\Notifications\Notification;
+use Rojtjo\Notifier\Notification;
 
 class ArrayTransportSpec extends ObjectBehavior
 {

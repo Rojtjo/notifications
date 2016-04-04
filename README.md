@@ -1,4 +1,4 @@
-# Notifications
+# Notifier
 
 Easily send notifications.
 
@@ -11,9 +11,9 @@ $ composer require rojtjo/notifications
 ## Usage
 
 ```php
-use Rojtjo\Notifications\ArrayTransport;
-use Rojtjo\Notifications\Notification;
-use Rojtjo\Notifications\Notifier;
+use Rojtjo\Notifier\ArrayTransport;
+use Rojtjo\Notifier\Notification;
+use Rojtjo\Notifier\Notifier;
 
 $transport = new ArrayTransport();
 $notifier = new Notifier($transport);

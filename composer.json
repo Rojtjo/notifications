@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Rojtjo\\Notifications\\": "src/"
+            "Rojtjo\\Notifier\\": "src/"
         }
     },
     "require": {},

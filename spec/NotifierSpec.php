@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\Rojtjo\Notifications;
+namespace spec\Rojtjo\Notifier;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Rojtjo\Notifications\Notification;
-use Rojtjo\Notifications\Transport;
+use Rojtjo\Notifier\Notification;
+use Rojtjo\Notifier\Transport;
 
 class NotifierSpec extends ObjectBehavior
 {
