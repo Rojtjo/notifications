@@ -1,4 +1,4 @@
-# rojtjo\notifications
+# Notifications
 
 Easily send notifications.
 
