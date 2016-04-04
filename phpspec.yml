@@ -4,8 +4,10 @@ extensions:
 code_coverage:
   format:
     - clover
+    - html
   output:
     clover: coverage.clover
+    html: coverage
 suites:
   notifier_suite:
     namespace: Rojtjo\Notifier
