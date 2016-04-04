@@ -1,4 +1,11 @@
 ---
+extensions:
+  - PhpSpec\Extension\CodeCoverageExtension
+code_coverage:
+  format:
+    - clover
+  output:
+    clover: coverage.clover
 suites:
   notifier_suite:
     namespace: Rojtjo\Notifier
