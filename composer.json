@@ -6,7 +6,9 @@
     "authors": [
         {
             "name": "Roj Vroemen",
-            "email": "me@rojvroemen.com"
+            "email": "me@rojvroemen.com",
+            "homepage": "https://rojvroemen.com",
+            "role": "Developer"
         }
     ],
     "autoload": {
@@ -14,9 +16,13 @@
             "Rojtjo\\Notifier\\": "src/"
         }
     },
-    "require": {},
-    "require-dev": {
-        "phpspec/phpspec": "^2.5"
+    "require": {
+        "php" : "~5.5|~7.0"
     },
-    "minimum-stability": "dev"
+    "require-dev": {
+        "phpspec/phpspec": "^2.5",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "minimum-stability": "stable"
 }
