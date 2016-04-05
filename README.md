@@ -12,7 +12,7 @@ Easily send notifications.
 ## Installation
 
 ```
-$ composer require rojtjo/notifications
+$ composer require rojtjo/notifier
 ```
 
 ## Usage
