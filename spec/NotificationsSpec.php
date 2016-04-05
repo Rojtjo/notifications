@@ -27,4 +27,20 @@ class NotificationsSpec extends ObjectBehavior
         $this->shouldImplement('Countable');
         $this->count()->shouldBe(2);
     }
+
+    function it_can_map_notifications_from_array_form()
+    {
+        $this->beConstructedThrough('mapFromArray', [[
+            [
+                'type' => 'success',
+                'message' => 'It is successful',
+            ],
+            [
+                'type' => 'error',
+                'message' => 'It is an error',
+            ],
+        ]]);
+
+        $this->count()->shouldBe(2);
+    }
 }

@@ -7,6 +7,21 @@ use Prophecy\Argument;
 
 class NotificationSpec extends ObjectBehavior
 {
+    function let()
+    {
+        $this->beConstructedWith('success', 'It is a success notification!');
+    }
+
+    function it_has_a_type()
+    {
+        $this->getType()->shouldBe('success');
+    }
+
+    function it_has_a_message()
+    {
+        $this->getMessage()->shouldBe('It is a success notification!');
+    }
+
     function it_can_be_a_success_notification()
     {
         $this->withTypeAndMessage(
@@ -37,6 +52,17 @@ class NotificationSpec extends ObjectBehavior
             'info',
             'It is an info notification!'
         );
+    }
+
+    function it_can_be_made_from_an_array()
+    {
+        $this->beConstructedThrough('fromArray', [[
+            'type' => 'success',
+            'message' => 'It is a success notification!'
+        ]]);
+
+        $this->getType()->shouldBe('success');
+        $this->getMessage()->shouldBe('It is a success notification!');
     }
 
     private function withTypeAndMessage($type, $message)

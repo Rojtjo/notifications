@@ -25,6 +25,18 @@ class Notification
     }
 
     /**
+     * @param array $data
+     * @return Notification
+     */
+    public static function fromArray(array $data)
+    {
+        return new Notification(
+            $data['type'],
+            $data['message']
+        );
+    }
+
+    /**
      * @param string $message
      * @return Notification
      */
