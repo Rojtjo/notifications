@@ -27,7 +27,7 @@ class Notifications implements IteratorAggregate, Countable
      */
     public static function mapFromArray(array $notifications)
     {
-        $mapped = array_map(function(array $notification) {
+        $mapped = array_map(function (array $notification) {
             return Notification::fromArray($notification);
         }, $notifications);
 
