@@ -25,4 +25,12 @@ class Notifier
     {
         $this->transport->send($notification);
     }
+
+    /**
+     * @return Notifications
+     */
+    public function getCurrentNotifications()
+    {
+        return $this->transport->getCurrentNotifications();
+    }
 }

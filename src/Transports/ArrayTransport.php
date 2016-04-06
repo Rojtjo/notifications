@@ -10,7 +10,12 @@ class ArrayTransport implements Transport
     /**
      * @var array
      */
-    private $notifications = [];
+    private $new = [];
+
+    /**
+     * @var array
+     */
+    private $current = [];
 
     /**
      * @param Notification $notification
@@ -18,14 +23,22 @@ class ArrayTransport implements Transport
      */
     public function send(Notification $notification)
     {
-        $this->notifications[] = $notification;
+        $this->new[] = $notification;
     }
 
     /**
      * @return array
      */
-    public function getNotifications()
+    public function getNewNotifications()
     {
-        return $this->notifications;
+        return $this->new;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCurrentNotifications()
+    {
+        return $this->current;
     }
 }

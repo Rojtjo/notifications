@@ -9,4 +9,9 @@ interface Transport
      * @return void
      */
     public function send(Notification $notification);
+
+    /**
+     * @return Notifications
+     */
+    public function getCurrentNotifications();
 }

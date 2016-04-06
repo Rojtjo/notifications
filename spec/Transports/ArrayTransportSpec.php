@@ -18,8 +18,16 @@ class ArrayTransportSpec extends ObjectBehavior
         $notification = Notification::success('It was successful');
         $this->send($notification);
 
-        $this->getNotifications()->shouldBe([
+        $this->getNewNotifications()->shouldBe([
             $notification
         ]);
+    }
+
+    function it_can_get_the_current_notifications()
+    {
+        $notification = Notification::success('It was successful');
+        $this->send($notification);
+
+        $this->getCurrentNotifications()->shouldBe([]);
     }
 }
